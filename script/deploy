@@ -1,7 +1,9 @@
 #!/bin/sh
  
 #ssh app@app <<EOF
-  cd ~/node-login
+  cd ~
+  git clone https://github.com/jrobinson17/LoginDemoApp
+  cd ~/LoginDemoApp
   git pull
   npm install --production
   npm install -d
