@@ -5,6 +5,7 @@
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
   git pull
+  npm install -g forever
   npm install --production
   npm install -d
   forever start app.js
