@@ -6,4 +6,5 @@ cd node-login
 npm install -d
 node app
 12/18/14
+Deploys to 2 prod servers for backup redundancy
 ```
