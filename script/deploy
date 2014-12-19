@@ -1,6 +1,6 @@
 #!/bin/sh
  
-ssh app@app <<EOF
+#ssh app@app <<EOF
   cd ~/node-login
   git pull
   npm install --production
@@ -8,4 +8,4 @@ ssh app@app <<EOF
   forever start app.js
   forever restartall
   exit
-EOF
+#EOF
