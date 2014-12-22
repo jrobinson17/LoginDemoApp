@@ -1,8 +1,8 @@
 #!/bin/sh
  
-#gcloud compute ssh app@demo --zone us-central1-a <<EOF
+gcloud compute ssh app@testdemo --zone us-central1-a <<EOF
 #ssh app@app <<EOF
-gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
+#gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
   sudo su
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
