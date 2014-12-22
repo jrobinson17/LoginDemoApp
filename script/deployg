@@ -10,6 +10,6 @@ gcloud compute ssh app@demo --zone us-central1-a <<EOF
   npm install --production
   npm install -d
   forever start app.js
-  forever restartall
+#  forever restartall
   exit
 EOF
