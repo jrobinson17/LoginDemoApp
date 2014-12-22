@@ -1,6 +1,7 @@
 #!/bin/sh
  
-ssh app@app <<EOF
+gcloud compute ssh appdemo --zone us-central1-a <<EOF
+#ssh app@app <<EOF
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
