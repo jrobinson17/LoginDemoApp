@@ -2,6 +2,7 @@
  
 gcloud compute ssh app@demo --zone us-central1-a <<EOF
 #ssh app@app <<EOF
+  sudo su
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
@@ -10,6 +11,6 @@ gcloud compute ssh app@demo --zone us-central1-a <<EOF
   npm install --production
   npm install -d
   forever start app.js
-#  forever restartall
+  forever restartall
   exit
 EOF
