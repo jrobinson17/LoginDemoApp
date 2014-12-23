@@ -1,0 +1,21 @@
+#!/bin/sh
+ 
+gcloud compute ssh app@k8s-docker-master --zone us-central1-a <<EOF
+#ssh app@app <<EOF
+#gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
+  
+  docker run -t -i cicd14 /bin/bash
+  sudo su
+  cd ~
+  git clone https://github.com/jrobinson17/LoginDemoApp
+  cd ~/LoginDemoApp
+  git pull
+  npm install -g forever
+  npm install --production
+  npm install -d
+  #forever start app.js
+  #forever restartall
+  exit
+  docker run -p 80:80 -d cicd14 nodejs /root/LoginDemoApp/app.js
+  
+EOF
