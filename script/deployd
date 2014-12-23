@@ -16,6 +16,7 @@ gcloud compute ssh app@k8s-docker-master --zone us-central1-a <<EOF
   #forever start app.js
   #forever restartall
   exit
+  sudo su
   docker run -p 80:80 -d cicd14 nodejs /root/LoginDemoApp/app.js
-  
+   
 EOF
