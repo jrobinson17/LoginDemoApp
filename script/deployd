@@ -3,14 +3,14 @@
 gcloud compute ssh app@k8s-docker-master --zone us-central1-a <<EOF
 #ssh app@app <<EOF
 #gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
-  npm install
+  #npm install
   docker run -t -i cicd14 /bin/bash
-  npm install
   sudo su
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
   git pull
+  npm install
   npm install -g forever
   npm install --production
   npm install -d
