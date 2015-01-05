@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# @James Robinson
+# @@MetLife
+#
+#############
+
+#variables 
+export name="metlife"
+export var1=$(( ( RANDOM % 10 )  + 1 )) 
+export imageName="$name$var1"
+#echo $imageName
+
+#gcloud compute ssh app@gtoretaildemo --zone us-central1-a <<EOF
+gcloud compute ssh app@puppetserver --zone us-central1-a <<EOF
+#ssh app@app <<EOF
+#gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
+sudo su
+puppet node_gce create --project serious-bearing-798 --image gtodevops  $imageName  f1-micro
+exit
+EOF
+echo "Going to sleep for 10 seconds"
+sleep 25
+gcloud compute ssh app@$imageName --zone us-central1-a <<EOF 
+  sudo su
+  cd ~
+  git clone https://github.com/jrobinson17/LoginDemoApp
+  cd ~/LoginDemoApp
+  git pull
+  npm install -g forever
+  npm install --production
+  npm install -d
+  forever start app.js
+  forever restartall
+  exit
+EOF
