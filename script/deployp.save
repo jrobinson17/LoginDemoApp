@@ -4,13 +4,11 @@
 # @@MetLife
 #
 #############
+echo $[ 1 + $[ RANDOM % 999999 ]]
 
 #variables 
-export name="metlife"
-export var1=$(( ( RANDOM % 997 )  + 1 )) 
-export imageName="$name$var1"
-#echo $imageName
-
+export imageName="metlife3"
+ 
 #gcloud compute ssh app@gtoretaildemo --zone us-central1-a <<EOF
 gcloud compute ssh app@puppetserver --zone us-central1-a <<EOF
 #ssh app@app <<EOF
@@ -20,7 +18,7 @@ puppet node_gce create --project serious-bearing-798 --image gtodevops  $imageNa
 exit
 EOF
 echo "Going to sleep for 10 seconds"
-sleep 25
+sleep 10
 gcloud compute ssh app@$imageName --zone us-central1-a <<EOF 
   sudo su
   cd ~
