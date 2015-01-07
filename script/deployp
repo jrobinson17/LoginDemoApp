@@ -10,7 +10,7 @@ export name="agt-charliebrown"
 export var1=$(( ( RANDOM % 997 )  + 1 )) 
 export imageName="$name$var1"
 #echo $imageName
-
+#puppet agent --certname agt-charliebrown1
 #gcloud compute ssh app@gtoretaildemo --zone us-central1-a <<EOF
 gcloud compute ssh app@snoopy --zone us-central1-a <<EOF
 #ssh app@app <<EOF
@@ -23,6 +23,7 @@ echo "Going to sleep for 10 seconds"
 sleep 25
 gcloud compute ssh app@$imageName --zone us-central1-a <<EOF 
   sudo su
+    puppet agent --certname $imageName 
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
