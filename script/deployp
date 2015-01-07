@@ -23,7 +23,8 @@ echo "Going to sleep for 10 seconds"
 sleep 25
 gcloud compute ssh app@$imageName --zone us-central1-a <<EOF 
   sudo su
-    puppet agent --certname $imageName 
+     puppet agent --certname $imageName 
+     curl -k https://130.211.129.5:8140/packages/current/install.bash | sudo bash
   cd ~
   git clone https://github.com/jrobinson17/LoginDemoApp
   cd ~/LoginDemoApp
