@@ -6,17 +6,17 @@
 #############
 
 #variables 
-export name="metlife"
+export name="agt-charlie_brown"
 export var1=$(( ( RANDOM % 997 )  + 1 )) 
 export imageName="$name$var1"
 #echo $imageName
 
 #gcloud compute ssh app@gtoretaildemo --zone us-central1-a <<EOF
-gcloud compute ssh app@puppetserver --zone us-central1-a <<EOF
+gcloud compute ssh app@snoopy --zone us-central1-a <<EOF
 #ssh app@app <<EOF
 #gcloud compute ssh app@demo2 --zone asia-east1-b <<EOF
 sudo su
-puppet node_gce create --project serious-bearing-798 --image gtodevops  $imageName  f1-micro
+puppet node_gce create --project serious-bearing-798 --image metlife-pe-agent-01052015  $imageName  f1-micro
 exit
 EOF
 echo "Going to sleep for 10 seconds"
