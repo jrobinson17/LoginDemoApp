@@ -6,7 +6,7 @@
 #############
 
 #variables 
-export name="agt-charlie_brown"
+export name="agt-charliebrown"
 export var1=$(( ( RANDOM % 997 )  + 1 )) 
 export imageName="$name$var1"
 #echo $imageName
