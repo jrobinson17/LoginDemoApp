@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 
 app.configure(function() {
 	//res.send('hello world');
-        app.set('port', 80);
+        app.set('port', 8080);
 	app.set('views', __dirname + '/app/server/views');
 	app.set('view engine', 'jade');
 	app.locals.pretty = true;
